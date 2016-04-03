@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>アコーディオン</title>
+</head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script>
+$(function(){
+	$("dd:not(:first)").hide();
+	$("dt").click(function(){
+		var x = $(this).next("dd");
+		x.stop().slideToggle("slow");
+	})
+})
+</script>
+<style>
+	dl{
+	position: relative;
+	overflow: hidden;
+	margin: 0 0 40px;
+	padding: 5px 0;
+	border-bottom: 1px solid #fff;
+	background: seagreen;
+	list-style: none;
+	}
+
+dt{
+	position: relative;
+	z-index: 10;
+	margin: 0;
+	padding: 1em;
+	border: 1px solid #bbb;
+	border-top-color: transparent;
+	background: #fff;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, .4);
+	text-shadow: 0 1px 1px #fff;
+	font-weight: bold;
+	cursor: pointer;
+	zoom: 1;
+}
+
+dt.hover,dt.active{
+	background-color: #fffdff;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iaGF0MCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHgxPSI1MCUiIHkxPSIxMDAlIiB4Mj0iNTAlIiB5Mj0iLTEuNDIxMDg1NDcxNTIwMmUtMTQlIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YxZjFmMSIgc3RvcC1vcGFjaXR5PSIxIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmRmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNoYXQwKSIgLz4KPC9zdmc+);
+	background-image: -moz-linear-gradient(bottom, #f1f1f1 0%, #fffdff 100%);
+	background-image: -o-linear-gradient(bottom, #f1f1f1 0%, #fffdff 100%);
+	background-image: -webkit-linear-gradient(bottom, #f1f1f1 0%, #fffdff 100%);
+	background-image: linear-gradient(bottom, #f1f1f1 0%, #fffdff 100%);
+}
+
+dt.active{ cursor: inherit; }
+dd{
+	position: relative;
+	z-index: 1;
+	margin: 0;
+	padding: 1em 1em 1em 2em;
+	border: 1px solid #bbb;
+	border-top-color: #fff;
+	background-color: #f1f1f1;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iaGF0MCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHgxPSI1MCUiIHkxPSIxMDAlIiB4Mj0iNTAlIiB5Mj0iLTEuNDIxMDg1NDcxNTIwMmUtMTQlIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmRmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2YxZjFmMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNoYXQwKSIgLz4KPC9zdmc+);
+	background-image: -moz-linear-gradient(bottom, #fffdff 0%, #f1f1f1 100%);
+	background-image: -o-linear-gradient(bottom, #fffdff 0%, #f1f1f1 100%);
+	background-image: -webkit-linear-gradient(bottom, #fffdff 0%, #f1f1f1 100%);
+	background-image: linear-gradient(bottom, #fffdff 0%, #f1f1f1 100%);
+	text-shadow: 0 1px 1px #fff;
+	zoom: 1;
+}
+.icon{
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	margin-right: .5em;
+	width: 12px;
+	height: 12px;
+	background: url(images/arrow-right.png) no-repeat 50% 50%;
+}
+.active .icon{ background-image: url(images/arrow-down.png); }
+		</style>
+
+
+</style>
+<body>
+	<dl>
+		<dt>日付</dt>
+		<dd>2013年1月</dd>
+		<dt>カテゴリー</dt>
+		<dd>プログラミング</dd>
+		<dt>タグ</dt>
+		<dd>Ruby</dd>
+	</dl>
+</body>
+</html>
